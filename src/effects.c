@@ -3677,6 +3677,38 @@ bool effect_handler_BOLT_AWARE(effect_handler_context_t *context)
 	return true;
 }
 
+bool effect_handler_ROCKET(effect_handler_context_t *context)
+{
+	int py = player->py;
+	int px = player->px;
+	int dam = 1000;
+	int rad = 3;
+	int source;
+
+	int ty = py + ddy[context->dir];
+	int tx = px + ddx[context->dir];
+
+    int flg = PROJECT_STOP | PROJECT_KILL | PROJECT_AWARE | PROJECT_PLAY | PROJECT_GRID | PROJECT_ITEM;
+	/* Player or monster? */
+	if (cave->mon_current > 0) {
+		struct monster *mon = cave_monster(cave, cave->mon_current);
+		source = cave->mon_current;
+	} else {
+		source = -1;
+	}
+
+	/* Ask for a target if no direction given */
+	if ((context->dir == 5) && target_okay() && source == -1) {
+		target_get(&tx, &ty);
+	}
+
+	/* Aim at the target, explode */
+	if (project(source, rad, ty, tx, dam, ELEM_ROCKET, flg, 0, 0, context->obj))
+		context->ident = true;
+
+	return true;
+}
+
 /**
  * Affect adjacent grids (radius 1 ball attack)
  */

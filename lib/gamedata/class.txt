@@ -113,7 +113,7 @@ attack:6:30:5
 equip:food:Ration of Food:1:3
 equip:light:Wooden Torch:1:3
 equip:potion:Berserk Strength:1:1
-equip:sword:Dagger:1:1
+equip:bow:Rocket Launcher:1:1
 equip:soft armour:Soft Leather Armour:1:1
 equip:scroll:Word of Recall:1:1
 flags:BRAVERY_30 | PSEUDO_ID_IMPROV | NO_MANA
@@ -149,7 +149,7 @@ attack:4:40:2
 equip:food:Ration of Food:1:3
 equip:light:Wooden Torch:1:3
 equip:magic book:[Magic for Beginners]:1:1
-equip:sword:Dagger:1:1
+equip:bow:Rocket Launcher:1:1
 equip:scroll:Word of Recall:1:1
 flags:CUMBER_GLOVE | ZERO_FAIL | BEAM | CHOOSE_SPELLS
 title:Novice
@@ -1082,7 +1082,7 @@ attack:5:30:4
 equip:food:Ration of Food:1:3
 equip:light:Wooden Torch:1:3
 equip:magic book:[Magic for Beginners]:1:1
-equip:sword:Dagger:1:1
+equip:bow:Rocket Launcher:1:1
 equip:soft armour:Soft Leather Armour:1:1
 equip:scroll:Word of Recall:1:1
 flags:CUMBER_GLOVE | CHOOSE_SPELLS | PSEUDO_ID_IMPROV
@@ -1410,9 +1410,8 @@ attack:5:35:4
 equip:food:Ration of Food:1:3
 equip:light:Wooden Torch:1:3
 equip:magic book:[Magic for Beginners]:1:1
-equip:sword:Dagger:1:1
+equip:bow:Rocket Launcher:1:1
 equip:bow:Short Bow:1:1
-equip:arrow:Arrow:15:20
 equip:scroll:Word of Recall:1:1
 flags:CUMBER_GLOVE | EXTRA_SHOT | CHOOSE_SPELLS | PSEUDO_ID_IMPROV
 title:Runner
@@ -1857,7 +1856,7 @@ attack:5:30:5
 equip:food:Ration of Food:1:3
 equip:light:Wooden Torch:1:3
 equip:prayer book:[Beginners Handbook]:1:1
-equip:sword:Dagger:1:1
+equip:bow:Rocket Launcher:1:1
 equip:scroll:Protection from Evil:1:1
 equip:scroll:Word of Recall:1:1
 flags:PSEUDO_ID_IMPROV

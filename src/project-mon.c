@@ -539,6 +539,11 @@ static void project_monster_handler_PLASMA(project_monster_handler_context_t *co
 	project_monster_resist_other(context, RF_IM_PLASMA, 3, true, MON_MSG_RESIST);
 }
 
+/* Rockets */
+static void project_monster_handler_ROCKET(project_monster_handler_context_t *context)
+{
+}
+
 static void project_monster_handler_METEOR(project_monster_handler_context_t *context)
 {
 }

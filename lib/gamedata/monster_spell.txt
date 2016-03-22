@@ -833,3 +833,13 @@ power:500
 lore:summon uniques
 message-vis:{name} summons {pronoun} servants.
 message-invis:You hear powerful things appear nearby!
+
+name:ROCKET
+msgt:ROCKET
+hit:100
+effect:ROCKET
+dice:1000
+power:100
+lore:fire a rocket
+message-vis:{name} fires a rocket!
+message-invis:Fwoosh!

@@ -419,6 +419,10 @@ static void project_player_handler_PLASMA(project_player_handler_context_t *cont
 	}
 }
 
+static void project_player_handler_ROCKET(project_player_handler_context_t *context)
+{
+}
+
 static void project_player_handler_METEOR(project_player_handler_context_t *context)
 {
 }
@@ -531,24 +535,27 @@ bool project_p(int who, int r, int y, int x, int dam, int typ)
 	/* No player here */
 	if (!(cave->squares[y][x].mon < 0)) return (false);
 
-	/* Never affect projector */
-	if (cave->squares[y][x].mon == who) return (false);
+    /* Affecting yourself */
+	if (cave->squares[y][x].mon == who) {
+        msg("Well, that was silly of you.");
+    }
+    else {
+        /* Source monster */
+        mon = cave_monster(cave, who);
 
-	/* Source monster */
-	mon = cave_monster(cave, who);
+        /* Player blind-ness */
+        blind = (player->timed[TMD_BLIND] ? true : false);
 
-	/* Player blind-ness */
-	blind = (player->timed[TMD_BLIND] ? true : false);
+        /* Extract the "see-able-ness" */
+        seen = (!blind && mflag_has(mon->mflag, MFLAG_VISIBLE));
 
-	/* Extract the "see-able-ness" */
-	seen = (!blind && mflag_has(mon->mflag, MFLAG_VISIBLE));
+        /* Get the monster's real name */
+        monster_desc(killer, sizeof(killer), mon, MDESC_DIED_FROM);
 
-	/* Get the monster's real name */
-	monster_desc(killer, sizeof(killer), mon, MDESC_DIED_FROM);
-
-	/* Let player know what is going on */
-	if (!seen)
-		msg("You are hit by %s!", gf_blind_desc(typ));
+        /* Let player know what is going on */
+        if (!seen)
+            msg("You are hit by %s!", gf_blind_desc(typ));
+    }
 
 	/* Adjust damage for resistance, immunity or vulnerability, and apply it */
 	dam = adjust_dam(player, typ, dam, RANDOMISE,

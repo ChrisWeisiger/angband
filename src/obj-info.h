@@ -53,7 +53,7 @@ enum {
 	EFINFO_BREATH,
 	EFINFO_BOLT,
 	EFINFO_BOLTD,
-	EFINFO_TOUCH
+	EFINFO_TOUCH,
 };
 
 textblock *object_info(const struct object *obj, oinfo_detail_t mode);

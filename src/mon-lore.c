@@ -360,6 +360,8 @@ void get_attack_colors(int melee_colors[RBE_MAX], int spell_colors[RSF_MAX])
 
 	/* Shrieking can lead to bad combos */
 	spell_colors[RSF_SHRIEK] = COLOUR_ORANGE;
+    /* Nobody likes rockets */
+    spell_colors[RSF_ROCKET] = COLOUR_L_RED;
 
 	/* Ranged attacks can't be resisted (only mitigated by accuracy)
 	 * They are colored yellow to indicate the damage is a hard value
@@ -1609,6 +1611,7 @@ void lore_append_spells(textblock *tb, const struct monster_race *race,
 	/* Collect innate attacks */
 	LORE_RESET_LISTS();
 	list_index = LORE_INSERT_SPELL_DESCRIPTION(RSF_SHRIEK);
+    list_index = LORE_INSERT_SPELL_DESCRIPTION(RSF_ROCKET);
 	list_index = LORE_INSERT_SPELL_DESCRIPTION(RSF_ARROW_1);
 	list_index = LORE_INSERT_SPELL_DESCRIPTION(RSF_ARROW_2);
 	list_index = LORE_INSERT_SPELL_DESCRIPTION(RSF_ARROW_3);

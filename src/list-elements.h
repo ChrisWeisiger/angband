@@ -36,6 +36,7 @@ ELEM(INERTIA,	"inertia",			"inertia",			"something strange",0,	RV(0,0,0,0),	6,		
 ELEM(FORCE,		"force",			"force",			"something hard",	0,	RV(0,0,0,0),	6,		200,	MSG_BR_FORCE,	COLOUR_UMBER)
 ELEM(TIME,		"time",				"time",				"something strange",0,	RV(0,0,0,0),	3,		150,	MSG_BR_TIME,	COLOUR_L_BLUE)
 ELEM(PLASMA,	"plasma",			"plasma",			"something",		0,	RV(0,0,0,0),	6,		150,	MSG_BR_PLASMA,	COLOUR_RED)
+ELEM(ROCKET,	"a rocket (!!!)",			"rocket",			"something hard and explodey",		0,	RV(0,0,0,0),	6,		0,		0,				COLOUR_RED)
 ELEM(METEOR,	"a meteor",			"meteor",			"something",		0,	RV(0,0,0,0),	6,		0,		0,				COLOUR_RED)
 ELEM(MISSILE,	"a missile",		"magical energy",	"something",		0,	RV(0,0,0,0),	6,		0,		0,				COLOUR_VIOLET)
 ELEM(MANA,		"mana",				"the elements",		"something",		0,	RV(0,0,0,0),	3,		1600,	MSG_BR_ELEMENTS,COLOUR_L_DARK)

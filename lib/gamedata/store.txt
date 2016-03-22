@@ -23,11 +23,6 @@ always:cloak:Cloak
 always:food:Ration of Food
 always:light:Wooden Torch
 always:flask:Flask of Oil
-always:digger:Shovel
-always:digger:Pick
-always:shot:Iron Shot
-always:arrow:Arrow
-always:bolt:Bolt
 normal:food:Pint of Fine Wine
 normal:food:Slime Mold
 normal:food:Flask of Whisky
@@ -37,7 +32,6 @@ buy:light
 buy:food
 buy:mushroom
 buy:flask
-buy:digger
 
 # Armoury
 store:2:Armoury
@@ -81,45 +75,35 @@ owner:5000:Ithyl-Mak the Beastly (Half-Troll)
 owner:10000:Arndal Beast-Slayer (Half-Elf)
 owner:25000:Tarl Beast-Master (Hobbit)
 owner:30000:Oglign Dragon-Slayer (Dwarf)
-slots:3:14
+slots:6:18
 turnover:9
-normal:shot:Iron Shot
-normal:arrow:Arrow
-normal:bolt:Bolt
-normal:sword:Dagger
-normal:sword:Main Gauche
-normal:sword:Rapier
-normal:sword:Short Sword
-normal:sword:Cutlass
-normal:sword:Tulwar
-normal:sword:Broad Sword
-normal:sword:Long Sword
-normal:sword:Scimitar
-normal:sword:Katana
-normal:sword:Bastard Sword
-normal:polearm:Spear
-normal:polearm:Awl-Pike
-normal:polearm:Trident
-normal:polearm:Pike
-normal:polearm:Beaked Axe
-normal:polearm:Broad Axe
-normal:polearm:Battle Axe
-normal:polearm:Lance
-normal:polearm:Lucerne Hammer
-normal:hafted:Whip
-normal:bow:Sling
-normal:bow:Short Bow
-normal:bow:Long Bow
-normal:bow:Light Crossbow
-buy:shot
-buy:bolt
-buy:arrow
-buy:bow
-buy:digger
-buy:sword
-buy:polearm
-buy:hafted
-
+normal:boots:Pair of Leather Sandals
+normal:boots:Pair of Leather Boots
+normal:boots:Pair of Iron Shod Boots
+normal:helm:Hard Leather Cap
+normal:helm:Metal Cap
+normal:helm:Iron Helm
+normal:soft armour:Robe
+normal:soft armour:Soft Leather Armour
+normal:soft armour:Studded Leather Armour
+normal:soft armour:Hard Leather Armour
+normal:soft armour:Leather Scale Mail
+normal:hard armour:Metal Scale Mail
+normal:hard armour:Chain Mail
+normal:gloves:Set of Leather Gloves
+normal:gloves:Set of Gauntlets
+normal:shield:Wicker Shield
+normal:shield:Small Metal Shield
+normal:shield:Leather Shield
+buy:boots
+buy:gloves
+buy:crown
+buy:helm
+buy:shield
+buy:cloak
+buy:soft armor
+buy:hard armor
+buy:dragon armor
 
 # Temple
 store:4:Temple
@@ -127,21 +111,13 @@ owner:15000:Ludwig the Humble (Human)
 owner:20000:Gunnar the Paladin (Human)
 owner:25000:Delilah the Pure (Elf)
 owner:30000:Bosk the Wise (Dwarf)
-slots:6:14
+slots:6:8
 turnover:9
 always:prayer book:[Beginners Handbook]
 always:prayer book:[Words of Wisdom]
 always:prayer book:[Chants and Blessings]
 always:prayer book:[Exorcism and Dispelling]
 always:potion:Cure Light Wounds
-normal:hafted:Whip
-normal:hafted:Quarterstaff
-normal:hafted:Mace
-normal:hafted:Ball-and-Chain
-normal:hafted:War Hammer
-normal:hafted:Morning Star
-normal:hafted:Flail
-normal:hafted:Lead-Filled Mace
 normal:scroll:Blessing
 normal:scroll:Holy Chant
 normal:scroll:Light
@@ -154,9 +130,6 @@ buy:prayer book
 buy:scroll
 buy:potion
 buy:hafted
-buy-flag:BLESSED:digger
-buy-flag:BLESSED:sword
-buy-flag:BLESSED:polearm
 
 # Alchemist
 store:5:Alchemy Shop
@@ -201,12 +174,6 @@ normal:ring:Feather Falling
 normal:ring:Protection
 normal:amulet:Slow Digestion
 normal:amulet:Resist Acid
-normal:wand:Slow Monster
-normal:wand:Confuse Monster
-normal:wand:Sleep Monster
-normal:wand:Magic Missile
-normal:wand:Stinking Cloud
-normal:wand:Wonder
 normal:staff:Teleportation
 normal:staff:Light
 normal:staff:Mapping
@@ -216,7 +183,6 @@ buy:magic book
 buy:amulet
 buy:ring
 buy:staff
-buy:wand
 buy:rod
 buy:scroll
 buy:potion

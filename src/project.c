@@ -810,7 +810,7 @@ bool project(int who, int rad, int y, int x, int dam, int typ, int flg,
 				 * All explosions can affect one layer of terrain which is
 				 * passable but not projectable - note that as of Angband 3.5.0
 				 * there is no such terrain - NRM */
-				if ((flg & (PROJECT_THRU)) ||
+				if ((flg & (PROJECT_THRU) || flg & (PROJECT_WALL)) ||
 					square_ispassable(cave, y, x)){
 					/* If this is a wall grid, ... */
 					if (!square_isprojectable(cave, y, x)) {

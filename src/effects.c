@@ -3688,7 +3688,7 @@ bool effect_handler_ROCKET(effect_handler_context_t *context)
 	int ty = py + ddy[context->dir];
 	int tx = px + ddx[context->dir];
 
-    int flg = PROJECT_STOP | PROJECT_KILL | PROJECT_AWARE | PROJECT_PLAY | PROJECT_GRID | PROJECT_ITEM;
+    int flg = PROJECT_STOP | PROJECT_KILL | PROJECT_AWARE | PROJECT_PLAY | PROJECT_GRID | PROJECT_ITEM | PROJECT_WALL;
 	/* Player or monster? */
 	if (cave->mon_current > 0) {
 		struct monster *mon = cave_monster(cave, cave->mon_current);
@@ -3701,6 +3701,9 @@ bool effect_handler_ROCKET(effect_handler_context_t *context)
 	if ((context->dir == 5) && target_okay() && source == -1) {
 		target_get(&tx, &ty);
 	}
+    /* HACK: don't explode in user's face */
+    ty = (ty - py) * 20 + py;
+    tx = (tx - px) * 20 + px;
 
 	/* Aim at the target, explode */
 	if (project(source, rad, ty, tx, dam, ELEM_ROCKET, flg, 0, 0, context->obj))

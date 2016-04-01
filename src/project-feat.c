@@ -489,6 +489,97 @@ static void project_feature_handler_ROCKET(project_feature_handler_context_t *co
 		/* Observe */
 		context->obvious = true;
 	}
+	const int x = context->x;
+	const int y = context->y;
+
+	/* Non-walls (etc) */
+	if (square_ispassable(cave, y, x)) return;
+
+	/* Permanent walls */
+	if (square_isperm(cave, y, x)) return;
+
+	/* Different treatment for different walls */
+	if (square_iswall(cave, y, x) && !square_hasgoldvein(cave, y, x)) {
+		/* Message */
+		if (square_isseen(cave, y, x)) {
+			msg("The wall is destroyed!");
+			context->obvious = true;
+
+			/* Forget the wall */
+			square_forget(cave, y, x);
+		}
+
+		/* Destroy the wall */
+		square_destroy_wall(cave, y, x);
+	} else if (square_iswall(cave, y, x) && square_hasgoldvein(cave, y, x)) {
+		/* Message */
+		if (square_isseen(cave, y, x)) {
+			msg("The vein is destroyed!");
+			msg("You have found something!");
+			context->obvious = true;
+
+			/* Forget the wall */
+			square_forget(cave, y, x);
+		}
+
+		/* Destroy the wall */
+		square_destroy_wall(cave, y, x);
+
+		/* Place some gold */
+		place_gold(cave, y, x, player->depth, ORIGIN_FLOOR);
+	} else if (square_ismagma(cave, y, x) || square_isquartz(cave, y, x)) {
+		/* Message */
+		if (square_isseen(cave, y, x)) {
+			msg("The vein is destroyed!");
+			context->obvious = true;
+
+			/* Forget the wall */
+			square_forget(cave, y, x);
+		}
+
+		/* Destroy the wall */
+		square_destroy_wall(cave, y, x);
+	} else if (square_isrubble(cave, y, x)) {
+		/* Message */
+		if (square_isseen(cave, y, x)) {
+			msg("The rubble is destroyed!");
+			context->obvious = true;
+
+			/* Forget the wall */
+			square_forget(cave, y, x);
+		}
+
+		/* Destroy the rubble */
+		square_destroy_rubble(cave, y, x);
+
+		/* Hack -- place an object */
+		if (randint0(100) < 10){
+			if (square_isseen(cave, y, x)) {
+				msg("There was something buried in the rubble!");
+				context->obvious = true;
+			}
+			place_object(cave, y, x, player->depth, false, false,
+						 ORIGIN_RUBBLE, 0);
+		}
+	} else if (square_isdoor(cave, y, x)) {
+		/* Hack -- special message */
+		if (square_isseen(cave, y, x)) {
+			msg("The door is destroyed!");
+			context->obvious = true;
+
+			/* Forget the wall */
+			square_forget(cave, y, x);
+		}
+
+		/* Destroy the feature */
+		square_destroy_door(cave, y, x);
+	}
+
+	/* Update the visuals */
+	player->upkeep->update |= (PU_UPDATE_VIEW | PU_MONSTERS);
+
+	/* Fully update the flow */
+	player->upkeep->update |= (PU_FORGET_FLOW | PU_UPDATE_FLOW);
 }
 
 static void project_feature_handler_METEOR(project_feature_handler_context_t *context)

@@ -65,6 +65,7 @@ enum
 #define PROJECT_SAFE  0x200
 #define PROJECT_ARC   0x400
 #define PROJECT_PLAY  0x800
+#define PROJECT_WALL  0x1000
 
 bool project_f(int who, int r, int y, int x, int dam, int typ);
 int inven_damage(struct player *p, int type, int cperc);
